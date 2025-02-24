@@ -13,7 +13,7 @@ resource "aws_security_group" "windows_access" {
         from_port   = 0
         to_port     = 0
         protocol    = "-1"
-        cidr_blocks = ["0.0.0.0/0"]
+        cidr_blocks = ["0.0.0.0/0"]    #after testing its best to change this to your public IP.
         description = "Allow all inbound traffic"
     }
     
