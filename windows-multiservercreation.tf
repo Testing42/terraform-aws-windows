@@ -113,7 +113,7 @@ resource "aws_instance" "windows_server" {
 # Output the public IPs and connection strings for both servers
 output "server_details" {
     value = {
-        for k, instance in aws_instance.windows_server : k => {  # Fixed typo to match resource name
+        for k, instance in aws_instance.windows_server : k => { 
             public_ip     = instance.public_ip
             name          = instance.tags["Name"]
             rdp_connection = "mstsc /v:${instance.public_ip}:3389"
